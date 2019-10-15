@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Conference.Domain.Entities.Talks>
+
+
+@{
+    ViewData["Title"] = "Talks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row border-top border-dark" style=background-color:#442359;>
+    <div class="container">
+        @foreach (var item in Model)
+        {
+
+
+            <div class="col-md-12" style="margin-bottom:4em; margin-top:2em">
+                <div style="min-height:50px; color:#77C3E9">
+
+                    <a class="title collapsed white" data-toggle="collapse" href='@string.Format("#id" + item.Id)' role="button" aria-expanded="false" aria-controls='@string.Format("id" + item.Id)' display="block">
+
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </a>
+                </div>
+
+                <div class="collapse" id='@string.Format("id" + item.Id)' style="">
+                    <div class="card card-body white bg-mv">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </div>
+                </div>
+
+                <div class="sub-title white bg-mv">
+
+                    @Html.DisplayFor(modelItem => item.Speaker.SpeakerName)
+
+
+                </div>
+
+
+
+            </div>
+
+        }
+
+    </div>
+</div>
+
+
+

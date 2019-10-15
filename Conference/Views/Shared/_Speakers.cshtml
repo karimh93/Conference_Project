@@ -1,0 +1,55 @@
+﻿@model Conference.Domain.Entities.Speakers
+@*
+    Partial View pentru Speaker
+*@
+
+<div class="col-sm-12 col-lg-3 child">
+    <img src="~/img/speakers/@string.Format(Model.FirstName+"-"+Model.LastName+".png")" asp-append-version="true" class="card-img-top" />
+    <div class="details">
+        <a class="link" href="/Speakers/details/@Model.Id">
+            <span class="name">@Model.SpeakerName</span>
+            <span class="position">@Model.Position, @Model.CompanyName</span>
+
+        </a>
+        <ul class="speaker-socials">
+
+            @if (Model.Twitter != null)
+
+            {
+                <li>
+
+                    <a target="_blank" class="link d-inline" href="@Model.Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+
+            }
+
+
+            @if (Model.Website != null)
+            {
+                <li>
+
+                    <a target="_blank" class="link d-inline" href="@Model.Website">
+                        <i class="fa fa-link"></i>
+                    </a>
+                </li>
+            }
+
+            @if (Model.LinkedIn != null)
+            {
+
+                <li>
+                    <a target="_blank" class="link d-inline" href="@Model.LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            }
+
+        </ul>
+
+
+    </div>
+
+
+</div>

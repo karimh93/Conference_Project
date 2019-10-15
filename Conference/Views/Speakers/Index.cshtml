@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Conference.Domain.Entities.Speakers>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="">
+    <div class="container">
+        <div class="row parent">
+            @foreach (var item in Model)
+            {
+
+                <partial name="_Speakers" model="item" />
+            }
+
+
+        </div>
+    </div>
+
+</div>

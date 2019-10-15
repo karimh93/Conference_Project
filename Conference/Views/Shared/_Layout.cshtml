@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - dotnetdays.ro - .Net & Microsoft related technology conference in Romania</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+
+    <link href="/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="/css/styles/index.css" asp-append-version="true" />
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/js/site.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-default bg-mv">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img class="img-responsive" src="~/img/[dotnetdays]colored-v2.png" alt="dotnetdays.ro" style="width: 15.6rem;" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav justify-content-end d-flex flex-fill" id="main-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home">
+                                Home
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Talks">Talks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Speakers">Speakers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Workshops">Workshops</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sponsors">Partners</a>
+                        </li>
+                        <li class="nav-item">
+                        <li>
+                            <a class="nav-link" href="/About">About</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" target="_blank" href="https://www.papercall.io/dotnetdaysro">CFP</a>
+                        </li>
+
+
+
+                    </ul>
+
+                    <ul class="menu-socials">
+                        <li class="nav-item">
+
+                            <a href="http://facebook.com/dotnetdays.ro" target="_blank">
+                                <span class="fab fa-facebook"></span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://twitter.com/dotnetdaysro" target="_blank">
+                                <span class="fab fa-twitter"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://meetup.com/NET-User-Group-Iasi/" target="_blank">
+                                <span class="fab fa-meetup"></span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+
+    @RenderBody()
+
+    <div id="newsletter" class="">
+        <div class="newsletter">
+            <div class="col-md-4 offset-md-2 col-sm-12 offset-sm-0">
+                <span class="title white float-right ">Stay tuned!</span>
+                <span class="subtitle white float-right text-right">You’ll be the first to know when things get in motion or we have something new to share.</span>
+
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="inputs">
+                    <input type="email" class="float-left col-sm-12 col-md-6 transparent" id="Email" name="Email" value="" placeholder="Email address*" />
+                    <span id="result" class="white" style="display: none;">Please check your email to confirm subscription!</span>
+                    <script src="~/js/site.js"></script>
+                    <button onclick="subscribeToNewsletter" class="col-sm-12 col-md-6 btn btn-primary btn-small">Subscribe to our newsletter</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container pb-3">
+            <div class="row">
+                <div class="about col-xs-12 col-md-4">
+                    <h4>Links</h4>
+                    <ul>
+
+                        <li>
+                            <a href="mailto:info@dotnetdays.ro">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="/Privacy">Privacy</a>
+                        </li>
+                        <li>
+                            <a href="/CoC">Code of Conduct</a>
+                        </li>
+                        <li>
+                            <a href="">Terms & Conditions</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div class="current-edition col-xs-12 col-md-4">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li>
+                            <a href="/About">About</a>
+                        </li>
+                        <li>
+                            <a href="/BeASponsor">Become a sponsor</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="socials col-xs-12 col-md-4">
+                    <h4>Socials</h4>
+                    <ul class="socials-nav align-right">
+                        <li class="social">
+                            <a href="http://facebook.com/dotnetdays.ro" target="_blank">
+                                <span class="fab fa-facebook"></span>
+                            </a>
+                        </li>
+                        <li class="social">
+                            <a href="https://twitter.com/dotnetdaysro" target="_blank">
+                                <span class="fab fa-twitter"></span>
+                            </a>
+                        </li>
+                        <li class="social">
+                            <a href="https://meetup.com/NET-User-Group-Iasi/" target="_blank">
+                                <span class="fab fa-meetup"></span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="text-right col-xs-12">&copy; 2019 - DotNetIasi</div>
+            </div>
+        </div>
+    </footer>
+
+
+    <environment include="Development">
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+
+
+
+
+</body>
+</html>

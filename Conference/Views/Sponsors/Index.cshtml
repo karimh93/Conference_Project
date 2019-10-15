@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Conference.Domain.Entities.Sponsors>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="">
+
+
+    <div class="container">
+        <section>
+            @foreach (var item in Model)
+            {
+                <h3 class="title text-left">@Html.DisplayFor(modelItem => item.SponsorType.Name)</h3>
+                <div class="row">
+                    <div class="col-sm-12 col-md-3 sponsor-item">
+
+                        <a href="@Html.DisplayFor(modelItem => item.Website)" style="" target="_blank">
+
+                            <img class="img-fluid" title="@Html.DisplayFor(modelItem => item.Name)" style="max-height:168px" src="~/img/sponsors/@string.Format(item.Name+".png")" alt="No picture to show">
+                        </a>
+
+                    </div>
+                </div>
+            }
+
+
+
+
+
+
+
+
+
+        </section>
+
+    </div>
+</div>
+

@@ -1,0 +1,133 @@
+﻿@model IEnumerable<Conference.Domain.Entities.Speakers>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/js/site.js"></script>
+<section id="hero" class="hero-section align-center light-text window-height center-content text-center bg-cover">
+    <div class="heading-block">
+        <div class="container">
+            <div class="hero-heading-top">
+                <script src="~/js/timer.js"></script>
+                <span id="days">
+
+                </span> days to the event
+
+
+            </div>
+            <div class="logo">
+                <img src="~/img/[dotnetdays]colored-v2@2x.png">
+            </div>
+            <h1 class="hero-heading-main">
+                2020
+            </h1>
+            <div class="location">
+                29 February 2020 | International Hotel, Iasi, Romania
+            </div>
+            <div class="btns-container">
+                <a href="http://dotnetdays.eventbrite.com" target="_blank" class="btn btn-large btn-main">
+                    Register
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <div class="counters-wrapper" style="height:90px;">
+    </div>
+</section>
+
+
+
+
+@*SECTIUNE Speakeri*@
+<div class="">
+    <div class="container">
+        <div class="row parent">
+
+            @foreach (var item in Model)
+            {
+                <partial name="_Speakers" model="item" />
+            }
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="bg-mv">
+    <div class="container">
+        <div class="row parent">
+            <div class="col-sm-12 col-md-6">
+                <h1 class="text-big white container">Talks</h1>
+            </div>
+
+            <div class="col-sm-12 col-md-6 title" style="text-align:right;">
+                <a class="btn btn-primary mv " href="/Talks">See all</a>
+            </div>
+            <div class="row parent">
+
+                @foreach (var item in Model)
+                {
+
+
+                    @foreach (var i in item.Talks)
+                    {
+                        <partial name="_Talks" model="i" />
+                    }
+
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+@*SECTIUNE WORKSHOPS*@
+
+<div class="">
+    <div class="container">
+        <div class="row" style="padding: 2.5rem">
+
+        </div>
+
+        <div class="row parent">
+            <div class="col-sm-12 col-md-6">
+                <h1 class="text-big mv container">Workshops</h1>
+            </div>
+
+            <div class="col-sm-12 col-md-6 title" style="text-align:right;">
+                <a class="btn btn-primary white " href="/Workshops">See all</a>
+            </div>
+
+
+
+            @foreach (var item in Model)
+            {
+
+
+                foreach (var i in item.Workshops)
+                {
+
+                    <partial name="_Workshops" model="i" />
+
+
+                }
+
+
+
+            }
+
+        </div>
+
+
+
+
+    </div>
+</div>

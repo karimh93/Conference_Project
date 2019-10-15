@@ -1,0 +1,36 @@
+﻿@model Conference.Domain.Entities.Talks
+@*<div class="row border-top border-dark" style=background-color:#442359;>
+    <div class="container">*@
+
+
+
+<div class="col-md-12 bg-mv">
+    <div style="min-height:50px; color:#77C3E9">
+
+        <a class="title collapsed white" data-toggle="collapse" href='@string.Format("#id" + Model.Id)' role="button" aria-expanded="false" aria-controls='@string.Format("id" + Model.Id)' display="block">
+
+            @Html.DisplayFor(modelItem => Model.Name)
+        </a>
+    </div>
+
+    <div class="collapse" id='@string.Format("id" + Model.Id)' style="">
+        <div class="card card-body white bg-mv">
+            @Html.DisplayFor(modelItem => Model.Description)
+        </div>
+    </div>
+
+    <div class="sub-title white bg-mv">
+
+        @Html.DisplayFor(modelItem => Model.Speaker.SpeakerName)
+
+
+    </div>
+
+
+
+</div>
+
+
+
+@*</div>
+    </div>*@

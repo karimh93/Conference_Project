@@ -1,0 +1,85 @@
+﻿@model Conference.Domain.Entities.Talks
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <h1 class="title">
+                    @Html.DisplayFor(model => model.Name)
+
+                </h1>
+                <div class="text">
+                    <p>
+                        @Html.DisplayFor(model => model.Description)
+
+
+
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-6">
+                <span class="sub-title">Speaker info</span>
+                <div class="img-responsive img-fluid col-md-4 col-sm-12">
+                    <img src="@string.Format("~/img/speakers/" +@Model.Speaker.FirstName + "-" + @Model.Speaker.LastName + ".jpg")" asp-append-version="true" class="card-img-top" />
+                </div>
+                <h2 class="text-big text-left">
+                    <a href="@string.Format("/Speakers/Details/" + Model.SpeakerId)">
+                        @Model.Speaker.SpeakerName
+                    </a>
+
+                </h2>
+                <div class="speaker-socials left">
+                    <ul class="speaker-socials text-left">
+
+                        @if (Model.Speaker.Twitter != null)
+
+                        {
+                            <li>
+
+                                <a target="_blank" class="link d-inline" href="@Model.Speaker.Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+
+                        }
+
+
+                        @if (Model.Speaker.Website != null)
+                        {
+                            <li>
+
+                                <a target="_blank" class="link d-inline" href="@Model.Speaker.Website">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                            </li>
+                        }
+
+                        @if (Model.Speaker.LinkedIn != null)
+                        {
+
+                            <li>
+                                <a target="_blank" class="link d-inline" href="@Model.Speaker.LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+
+                </div>
+                <div class="align-bottom">
+                    <a target="_blank" href="https://www.eventbrite.com" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

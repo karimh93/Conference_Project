@@ -1,0 +1,75 @@
+
+
+
+/*index*/
+.style-svg {
+    fill: #442359;
+    height: 75px;
+    text-align: center;
+}
+
+.n-item {
+    margin-bottom: 3rem;
+}
+
+#conf-info {
+    background-image: url("../images/bckg_full_width_2cip.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #fff;
+    padding-bottom: 7.5rem;
+    padding-top: 7.5rem;
+    height: 20rem;
+}
+
+
+#register {
+    background-image: url("../images/bckg_full_width_3crop.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #fff;
+    padding-bottom: 7.5rem;
+    padding-top: 7.5rem;
+}
+
+section {
+    padding-bottom: 4.5rem;
+    padding-top: 2.5rem;
+}
+
+h3.special {
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0em;
+    color: #6ec2e9;
+    word-wrap: break-word;
+    font-size: 3.5rem;
+}
+
+.content {
+    min-height: calc(60vh - 7rem);
+}
+
+footer {
+    bottom: 0;
+}
+
+ul.socials-nav {
+    text-align: center;
+}
+
+    ul.socials-nav > li {
+        display: inline-block;
+        margin-right:2rem;
+    }
+
+li.social a {
+    font-size: 4rem;
+}

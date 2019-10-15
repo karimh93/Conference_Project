@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Conference.Domain.Entities.Workshops>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="">
+    <section class="container">
+        <div>
+            <h1>Workshops</h1>
+        </div>
+        <div class="parent row">
+            @foreach (var item in Model)
+            {
+                <partial name="_Workshops" model="item" />
+            }
+
+
+
+
+
+
+
+        </div>
+    </section>
+
+</div>

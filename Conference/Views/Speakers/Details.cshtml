@@ -1,0 +1,111 @@
+﻿@model Conference.Domain.Entities.Speakers
+
+@{
+    ViewData["Title"] = "Speaker details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="">
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-xs-12 col-md-2 offset-md-2 space-big space">
+                <div>
+                    <img src="@string.Format("~/img/speakers/"+Model.FirstName+"-"+Model.LastName+".png")" asp-append-version="true" class="card-img-top" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-5 space-big space">
+                <h1 class="title">@Model.SpeakerName</h1>
+                <h2 class="subtitle blue ">@Model.Position</h2>
+                <span class="subtitle blue">
+                    @Model.CompanyName
+                </span>
+                <div class="speaker-socials blue">
+                    <ul>
+                        @if (Model.Twitter != null)
+                        {
+                            <li>
+                                <a target="_blank" class="link d-inline" href="@Model.Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                        }
+
+                        @if (Model.Website != null)
+                        {
+                            <li>
+
+                                <a target="_blank" class="link d-inline" href="@Model.Website">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                            </li>
+                        }
+
+                        @if (Model.LinkedIn != null)
+                        {
+                            <li>
+                                <a target="_blank" class="link d-inline" href="@Model.LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="text">
+                    @Model.Description
+                </div>
+            </div>
+
+
+
+
+            <div class="col-xs-12 col-md-3 bg-mv text-center space">
+
+
+                @if (Model.GetAllTalks().Count > 0)
+                {
+                    <h2 class="title white medium text-left">Talks</h2>
+                    <a href="/Talks/Details/@foreach (var item in Model.Talks)
+                                            {
+                                                @item.Id
+                                            }">
+                        @foreach (var item in Model.GetAllTalks())
+                        {<h2 class="title white small">@item.Name;</h2>
+                    }
+
+                    </a>
+                }
+                @if (Model.Workshops.Count > 0)
+                {
+
+
+                    <h2 class="title white medium text-left">Workshops</h2>
+                    <a href="/Workshops/Details/@foreach (var item in Model.Workshops)
+                                                 {
+                                                     @item.Id
+                                                 }">
+
+                        @foreach (var item in Model.Workshops)
+                        {
+
+                            <h2 class="title white small">@item.Name;</h2>
+
+
+                        }
+
+                    </a>
+
+                }
+
+                <div style="height:15rem"></div>
+                <div class="align-bottom">
+                    <a target="_blank" href="https://www.eventbrite.com" class="btn btn-primary">Register</a>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>

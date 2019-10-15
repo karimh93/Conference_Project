@@ -1,0 +1,12 @@
+﻿@model Conference.Domain.Entities.Workshops
+
+
+<div class="col-lg-3 child workshop">
+    <div class="text-big mv fixed">
+        <a class="name" href="~/Workshops/Details/@Model.Id">@Html.DisplayFor(modelItem => Model.Name)</a>
+    </div>
+
+    <span class="sub-title mv">@Html.DisplayFor(modelItem => Model.Speaker.SpeakerName)</span>
+    <a target="_blank" href="https://www.eventbrite.com" class="btn btn-primary">Register</a>
+
+</div>
