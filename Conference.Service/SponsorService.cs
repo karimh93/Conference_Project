@@ -22,6 +22,7 @@ namespace Conference.Service
         {
             this.sponsorRepository = sponsorRepository;
         }
+        
         public Sponsors AddSponsor(Sponsors sponsorToBeAdded)
         {
             if (IsUniqueSponsor(sponsorToBeAdded.Name))
